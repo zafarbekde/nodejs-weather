@@ -9,12 +9,15 @@ const TOKEN_DICTIONARY = {
 	city: 'city',
 }
 
+
+
 const saveKeyValue = async (key, value) => {
 	let data = {}
 
 	if (await isExist(filePath)) {
 		const file = await fs.promises.readFile(filePath)
 		data = JSON.parse(file)
+		conslo.log(data)
 	}
 
 	data[key] = value
